@@ -1,7 +1,8 @@
-import React from 'react';
-import {Button, Tag, P, Htag} from '../components';
+import React, {useState} from 'react';
+import {Button, Tag, P, Htag, Rating} from '../components';
 
 function Home(): JSX.Element{
+      const [rating, setRating] = useState<number>(0);
   return (
       <>
         <P size="s">My name is Arthur Davidov !!!</P>
@@ -17,6 +18,7 @@ function Home(): JSX.Element{
         <Tag size="s" color="ghost">Photoshop</Tag>
         <Tag size="m" color="red" href='https://hh.ru/'>hh.ru</Tag>
         <Tag size="s" color="primary" href='https://www.google.com/'>Работа в Photoshop</Tag>
+        <Rating rating={rating} setRating={setRating} isEditable={true} />
       </>
   );
 }
